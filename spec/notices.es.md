@@ -54,7 +54,10 @@ algo ya publicado. Es la única de las tres que se escribe bajo presión, así q
 propósito.
 
 Lleva: el instante UTC, un `code` de la lista cerrada de abajo, qué pasó, qué se hizo, y qué debería
-comprobar un tercero. Firmada con la misma clave que todo lo demás.
+comprobar un tercero. Va en Markdown y **sin firma**, a propósito: la nota informa, no prueba.
+Si la clave estuviera en manos ajenas, firmar con ella «me robaron la clave» no probaría nada —
+el que la tiene puede firmar lo mismo. Lo que la respalda es dónde vive: `permanent` es
+append-only y la fecha del commit la pone el proveedor, no nosotros.
 
 ```
 key_compromised       una clave de firma está, o puede estar, en manos ajenas
