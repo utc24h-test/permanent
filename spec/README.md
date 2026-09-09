@@ -35,6 +35,9 @@ make a badly written verifier accuse a legitimate file.**
 
 ## Which drand round belongs to a turn
 
+**There is a turn every 10 minutes, on the clock, always UTC:** `HH:00`, `HH:10`, `HH:20`, `HH:30`,
+`HH:40`, `HH:50`. 144 turns a day. Any other instant is not a turn and has no file.
+
 **The target round is not chosen. It is derived**, and this is what makes it impossible for us to
 name a round that suits us:
 
@@ -81,11 +84,11 @@ another turn.
 **So a gap is read backwards:**
 
 ```
-2026-08-22/0505   missing
-2026-08-22/0500   -emission with  "recovery": { "code": "emitted_after_expiry", ... }
+emissions/2026/08/22/0510                missing
+emissions/2026/08/22/0500-emission.jws   with  "recovery": { "code": "emitted_after_expiry", ... }
 ```
 
-The 05:00 turn was closed late. While it was open, 05:05 could not start. That is the whole
+The 05:00 turn was closed late. While it was open, 05:10 could not start. That is the whole
 explanation, and it is in a signed file.
 
 **What counts as explained.** A gap is explained when the previous turn's `-emission` carries a
