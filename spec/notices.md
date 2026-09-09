@@ -54,7 +54,10 @@ published. It is the only one of the three written under pressure, so its form i
 small.
 
 It carries: the UTC instant, a `code` from the closed list below, what happened, what was done, and
-what a third party should check. Signed with the same key as everything else.
+what a third party should check. It is Markdown and **unsigned**, on purpose: a notice informs,
+it does not prove. If the key were in someone else's hands, signing "my key was stolen" with it
+would prove nothing — whoever holds it can sign the same. What backs it is where it lives:
+`permanent` is append-only and the commit date is set by the provider, not by us.
 
 ```
 key_compromised       a signing key is, or may be, in someone else's hands
