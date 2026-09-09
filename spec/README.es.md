@@ -35,6 +35,9 @@ tres que hacen que un verificador mal escrito acuse a un archivo legítimo.**
 
 ## Qué ronda de drand le toca a cada turno
 
+**Hay un turno cada 10 minutos, en el reloj, siempre UTC:** `HH:00`, `HH:10`, `HH:20`, `HH:30`,
+`HH:40`, `HH:50`. 144 turnos por día. Cualquier otro instante no es un turno y no tiene archivo.
+
 **La ronda objetivo no se elige. Se deriva**, y eso es lo que hace imposible que nombremos una ronda
 que nos convenga:
 
@@ -79,11 +82,11 @@ empieza otro turno.
 **Por eso un hueco se lee hacia atrás:**
 
 ```
-2026-08-22/0505   falta
-2026-08-22/0500   -emission con  "recovery": { "code": "emitted_after_expiry", ... }
+emissions/2026/08/22/0510                falta
+emissions/2026/08/22/0500-emission.jws   con  "recovery": { "code": "emitted_after_expiry", ... }
 ```
 
-El turno de las 05:00 se cerró tarde. Mientras estuvo abierto, el 05:05 no pudo arrancar. Esa es toda
+El turno de las 05:00 se cerró tarde. Mientras estuvo abierto, el 05:10 no pudo arrancar. Esa es toda
 la explicación, y está en un archivo firmado.
 
 **Qué cuenta como explicado.** Un hueco está explicado cuando el `-emission` del turno anterior trae
